@@ -43,7 +43,7 @@ export default function Header({language, placeholder}) {
                 <Image src="https://links.papareact.com/qd3" layout='fill' objectFit='contain' objectPosition='left'/>
             </div>
             <div onChange={(e) => setSearchInput(e.target.value)} className='flex items-center md:border-2 rounded-full py-2 md:shadow-lg'>
-                <input value={searchInput} className='pl-5 bg-transparent outline-none flex-grow text-sm text-gray-600 placeholder-gray-400' type='text' placeholder={placeholder || 'Start your search'}/>
+                <input key='input-search' value={searchInput} className='pl-5 bg-transparent outline-none flex-grow text-sm text-gray-600 placeholder-gray-400' type='text' placeholder={placeholder || 'Start your search'}/>
                 <SearchIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-1 cursor-pointer md:mx-2'/>
             </div>
             <div className='flex space-x-4 items-center justify-end text-gray-500'>
@@ -61,7 +61,7 @@ export default function Header({language, placeholder}) {
                     <div className='flex items-center border-b mb-4'>
                         <h2 className='text-2xl flex-grow font-semibold '>Number of Guests</h2>
                         <UsersIcon className='h-5'/>
-                        <input value={noOfGuests} onChange={(e)=> setNoOfGuests(e.target.value)} min={1} type='number' className='w-12 pl-2 text-lg outline-none text-red-600'/> 
+                        <input key='guests-input' value={noOfGuests} onChange={(e)=> setNoOfGuests(e.target.value)} min={1} type='number' className='w-12 pl-2 text-lg outline-none text-red-600'/> 
                     </div>
                     <div className='flex '>
                         <button className='flex-grow text-gray-600' onClick={() => resetInput()}>Cancel</button>
